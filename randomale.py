@@ -19,13 +19,15 @@ users = data["results"]
 
 # File to store user data
 filename = 'male_users.csv'
-# Print the user data
+
+# Open the CSV file in write mode using the open() function and the csv.writer() function
 with open(filename, mode='w', newline='') as file:
     writer = csv.writer(file)
-
+    # Write the headers of the CSV file using the writer.writerow() function
     headers = ['ID','First Name', 'Last Name', 'Email', 'Age', 'Gender','Phone Number','D.O.B','Picture','Nationality']
     writer.writerow(headers)
 
+# Loop through the users and write each row of user data to the CSV file using the writer.writerow() function
 
     for user in users:
         user_id = user['id']
